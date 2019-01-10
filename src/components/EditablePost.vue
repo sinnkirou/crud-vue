@@ -1,6 +1,6 @@
 <template>
-  <div key="EditablePost" class="post">
-    <form class="form" v-on:submit.prevent="onSubmit()">
+  <div class="post" key="{{`EditablePost${post.id}`}}">
+    <form class="form" @submit.prevent="onSubmit">
       <input required type="text" placeholder="Enter Post Title" v-model="formObj.title">
       <br>
       <br>
@@ -19,9 +19,9 @@
 export default {
   name: "EditablePost",
   props: {
-    posts: Array,
     post: Object,
-    toggleEditable: Function
+    toggleEditable: Function,
+    addPost: Function
   },
   data: function() {
     return {
@@ -37,10 +37,7 @@ export default {
     },
     onSubmit: function() {
       if (!this.post || !this.post.id) {
-        this.posts.push({
-          id: this.posts.length + 1,
-          ...this.formObj
-        });
+        this.addPost(this.formObj);
         this.reset();
       } else {
         this.toggleEditable();

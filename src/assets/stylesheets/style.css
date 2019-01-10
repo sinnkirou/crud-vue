@@ -184,7 +184,7 @@ a:hover {
   background: lightgray;
 }
 
-.allPosts {
+.allPosts{
   display: flex;
   flex-direction: column;
   justify-content: center;

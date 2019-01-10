@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import PostForm from "./components/PostForm.vue";
-import AllPosts from "./components/AllPosts.vue";
-import Vue from "vue";
+import PostForm from "./containers/PostForm.vue";
+import AllPosts from "./containers/AllPosts.vue";
+import "./assets/stylesheets/material.min.js";
 
 export default {
   name: "app",
@@ -28,5 +28,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "./assets/style.css";
+@import "./assets/stylesheets/style.css";
+@import "./assets/stylesheets/material.min.css";
+@import "./assets/material-icons/material-icons.css";
 </style>

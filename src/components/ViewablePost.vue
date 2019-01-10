@@ -5,7 +5,7 @@
       <p class="post_message">{{post.message}}</p>
       <p class="post_id">{{`id: ${post.id}`}}</p>
       <div class="control_buttons">
-        <button class="edit" type="button" v-on:click.prevent="toggleEditable()">{{'Edit'}}</button>
+        <button class="edit" type="button" @click.prevent="toggleEditable">{{'Edit'}}</button>
         <button class="delete" type="button">{{'Delete'}}</button>
       </div>
     </div>
@@ -23,8 +23,7 @@ import EditablePost from "./EditablePost.vue";
 export default {
   name: "ViewablePost",
   props: {
-    post: Object,
-    posts: Array
+    post: Object
   },
   components: {
     EditablePost
