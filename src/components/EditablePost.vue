@@ -19,9 +19,7 @@
 export default {
   name: "EditablePost",
   props: {
-    post: Object,
-    toggleEditable: Function,
-    addPost: Function
+    post: Object
   },
   data: function() {
     return {
@@ -30,6 +28,7 @@ export default {
       }
     };
   },
+  inject: ["addPost", "updatePost"],
   methods: {
     reset: function() {
       this.formObj.title = "";
@@ -40,7 +39,8 @@ export default {
         this.addPost(this.formObj);
         this.reset();
       } else {
-        this.toggleEditable();
+        this.updatePost(this.formObj);
+        this.$emit("toggle-Editable");
       }
     }
   }
