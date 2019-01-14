@@ -6,7 +6,7 @@
       <p class="post_id">{{`id: ${post.id}`}}</p>
       <div class="control_buttons">
         <button class="edit" type="button" @click.prevent="toggleEditable">{{'Edit'}}</button>
-        <button class="delete" type="button" @click.prevent="deletePost(post.id)">{{'Delete'}}</button>
+        <button class="delete" type="button" @click.prevent="DELETE_POST(post.id)">{{'Delete'}}</button>
       </div>
     </div>
     <EditablePost v-else-if="editable" :post="post" v-on:toggle-Editable="toggleEditable"></EditablePost>
@@ -14,6 +14,9 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+import { DELETE_POST } from "../constants/mutation-types";
+
 export default {
   name: "PostItem",
   props: {
@@ -25,11 +28,11 @@ export default {
   data: () => ({
     editable: false
   }),
-  inject: ["deletePost"],
   methods: {
     toggleEditable: function() {
       this.editable = !this.editable;
-    }
+    },
+    ...mapMutations("modulePosts", [DELETE_POST])
   }
 };
 </script>

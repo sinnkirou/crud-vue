@@ -16,6 +16,10 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from "vuex";
+import { ADD_POST_ASYNC, UPDATE_POST } from "../constants/mutation-types";
+const { mapMutations, mapActions } = createNamespacedHelpers("modulePosts");
+
 export default {
   name: "EditablePost",
   props: {
@@ -28,18 +32,19 @@ export default {
       }
     };
   },
-  inject: ["addPost", "updatePost"],
   methods: {
     reset: function() {
       this.formObj.title = "";
       this.formObj.message = "";
     },
+    ...mapMutations([UPDATE_POST]),
+    ...mapActions([ADD_POST_ASYNC]),
     onSubmit: function() {
       if (!this.post || !this.post.id) {
-        this.addPost(this.formObj);
+        this.ADD_POST_ASYNC(this.formObj);
         this.reset();
       } else {
-        this.updatePost(this.formObj);
+        this.UPDATE_POST(this.formObj);
         this.$emit("toggle-Editable");
       }
     }

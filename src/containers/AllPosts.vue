@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="allPosts">
-      <h1 class="post_heading">All Posts</h1>
+      <h1 class="post_heading">All Posts {{postsCount(keyword)}}</h1>
       <div class="mdl-textfield mdl-js-textfield">
         <label class="mdl-button mdl-js-button mdl-button--icon">
           <i class="material-icons">search</i>
@@ -19,10 +19,14 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapState } = createNamespacedHelpers("modulePosts");
+
 export default {
   name: "AllPosts",
-  props: {
-    posts: Array
+  computed: {
+    ...mapState(["posts"]),
+    ...mapGetters(["postsCount"])
   },
   data: () => ({
     keyword: ""
