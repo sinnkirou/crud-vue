@@ -1,7 +1,24 @@
 <template>
   <div id="app">
-    <PostForm :posts="posts"/>
-    <AllPosts :posts="posts"/>
+    <button
+      id="demo-menu-lower-left"
+      class="mdl-button mdl-js-button mdl-button--icon"
+      type="button"
+    >
+      <i class="material-icons">more_vert</i>
+    </button>
+    <ul
+      class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-left"
+    >
+      <li class="mdl-menu__item">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li class="mdl-menu__item">
+        <router-link to="/posts">Posts</router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -11,10 +28,6 @@ import uuid from "uuid/v1";
 
 export default {
   name: "app",
-  components: {
-    PostForm: () => import("./containers/PostForm"),
-    AllPosts: () => import("./containers/AllPosts")
-  },
   data: () => ({
     posts: [
       {
