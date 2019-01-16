@@ -4,7 +4,7 @@ import {
   DELETE_POST,
   UPDATE_POST,
   SET_POSTS,
-  GET_POSTS_ASYNC
+  GET_INIT_POSTS_ASYNC
 } from "../../constants/mutation-types";
 import postService from "../../apis/postService";
 
@@ -31,7 +31,7 @@ const mutations = {
 };
 
 const actions = {
-  [GET_POSTS_ASYNC]({ commit }) {
+  [GET_INIT_POSTS_ASYNC]({ commit }) {
     postService.getPosts(posts => {
       commit(SET_POSTS, posts);
     });
