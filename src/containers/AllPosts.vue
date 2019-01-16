@@ -20,7 +20,7 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-const { mapGetters, mapState } = createNamespacedHelpers("modulePosts");
+const { mapGetters, mapState } = createNamespacedHelpers("postModule");
 
 export default {
   name: "AllPosts",

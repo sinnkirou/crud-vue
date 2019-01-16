@@ -32,7 +32,7 @@ export default {
     toggleEditable: function() {
       this.editable = !this.editable;
     },
-    ...mapMutations("modulePosts", [DELETE_POST])
+    ...mapMutations("postModule", [DELETE_POST])
   }
 };
 </script>

@@ -24,9 +24,18 @@
 
 <script>
 import "./assets/stylesheets/material.min.js";
+import { createNamespacedHelpers } from "vuex";
+import { GET_POSTS_ASYNC } from "./constants/mutation-types";
+const { mapActions } = createNamespacedHelpers("postModule");
 
 export default {
-  name: "app"
+  name: "app",
+  methods: {
+    ...mapActions([GET_POSTS_ASYNC])
+  },
+  created: function() {
+    this.GET_POSTS_ASYNC();
+  }
 };
 </script>
 

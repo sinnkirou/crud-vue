@@ -17,8 +17,8 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-import { ADD_POST_ASYNC, UPDATE_POST } from "../constants/mutation-types";
-const { mapMutations, mapActions } = createNamespacedHelpers("modulePosts");
+import { ADD_POST, UPDATE_POST } from "../constants/mutation-types";
+const { mapMutations } = createNamespacedHelpers("postModule");
 
 export default {
   name: "EditablePost",
@@ -37,11 +37,10 @@ export default {
       this.formObj.title = "";
       this.formObj.message = "";
     },
-    ...mapMutations([UPDATE_POST]),
-    ...mapActions([ADD_POST_ASYNC]),
+    ...mapMutations([ADD_POST, UPDATE_POST]),
     onSubmit: function() {
       if (!this.post || !this.post.id) {
-        this.ADD_POST_ASYNC(this.formObj);
+        this.ADD_POST(this.formObj);
         this.reset();
       } else {
         this.UPDATE_POST(this.formObj);
