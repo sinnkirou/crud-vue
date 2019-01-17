@@ -9,12 +9,10 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "path": "^0.12.7",
     "uuid": "^3.3.2",
     "vue": "^2.5.21",
     "vue-router": "^3.0.2",
-    "vuex": "^3.0.1",
-    "webpack": "^4.28.4"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
@@ -23,8 +21,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21",
-    "webpack-cli": "^3.2.1"
+    "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
     "root": true,
