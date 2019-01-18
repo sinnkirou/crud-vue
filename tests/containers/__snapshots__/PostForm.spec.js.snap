@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostForm.vue has the expected html structure 1`] = `
+<div>
+  <div
+    class="navbar"
+  >
+    <h2
+      class="center"
+    >
+      Post It
+    </h2>
+  </div>
+   
+  <div
+    class="post_container"
+  >
+    <h1
+      class="post_heading"
+    >
+      Create Post
+    </h1>
+     
+    <div
+      class="post"
+    >
+      <form
+        class="form"
+      >
+        <input
+          placeholder="Enter Post Title"
+          required="required"
+          type="text"
+        />
+         
+        <br />
+         
+        <br />
+         
+        <textarea
+          cols="28"
+          placeholder="Enter Post"
+          required="required"
+          rows="5"
+        />
+         
+        <br />
+         
+        <br />
+         
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised"
+          type="submit"
+        >
+          Create
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;

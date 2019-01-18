@@ -13,7 +13,6 @@
 <script>
 export default {
   name: "PostForm",
-  methods: {},
   components: {
     EditablePost: () => import("../components/EditablePost")
   }

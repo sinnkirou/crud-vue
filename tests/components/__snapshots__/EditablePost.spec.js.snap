@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditablePost.vue has the expected html structure 1`] = `
+<div
+  class="post"
+>
+  <form
+    class="form"
+  >
+    <input
+      placeholder="Enter Post Title"
+      required="required"
+      type="text"
+    />
+     
+    <br />
+     
+    <br />
+     
+    <textarea
+      cols="28"
+      placeholder="Enter Post"
+      required="required"
+      rows="5"
+    />
+     
+    <br />
+     
+    <br />
+     
+    <button
+      class="mdl-button mdl-js-button mdl-button--raised"
+      type="submit"
+    >
+      Update
+    </button>
+  </form>
+</div>
+`;
