@@ -1,11 +1,12 @@
 import { shallowMount } from "@vue/test-utils";
-import PostForm from "@/containers/PostForm.vue";
+import AllPosts from "@/containers/AllPosts.vue";
+import { localVue, store, posts } from "../mockStore";
 
-describe("PostForm.vue", () => {
+describe("AllPosts.vue", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallowMount(PostForm);
+    wrapper = shallowMount(AllPosts, { localVue, store });
   });
 
   afterEach(() => {
@@ -14,6 +15,7 @@ describe("PostForm.vue", () => {
 
   it("should render", () => {
     expect(wrapper.isVueInstance()).toBeTruthy();
+    expect(wrapper.vm.posts).toEqual(posts);
   });
 
   it("has the expected html structure", () => {

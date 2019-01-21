@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import PostItem from "@/components/PostItem.vue";
+import { localVue, store } from "../mockStore";
 
 describe("PostItem.vue", () => {
   let wrapper;
@@ -11,8 +12,14 @@ describe("PostItem.vue", () => {
 
   beforeEach(() => {
     wrapper = shallowMount(PostItem, {
-      propsData: { post }
+      propsData: { post },
+      localVue,
+      store
     });
+  });
+
+  afterEach(() => {
+    wrapper.destroy();
   });
 
   it("should render", () => {
