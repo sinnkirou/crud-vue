@@ -9,7 +9,7 @@
         <button class="delete" type="button" @click.prevent="DELETE_POST(post.id)">{{'Delete'}}</button>
       </div>
     </div>
-    <EditablePost v-else-if="editable" :post="post" v-on:toggle-Editable="toggleEditable"></EditablePost>
+    <EditablePost v-else-if="editable" :post="post" v-on:toggleEditable="toggleEditable"></EditablePost>
   </div>
 </template>
 

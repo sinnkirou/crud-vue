@@ -1,15 +1,11 @@
 import { shallowMount } from "@vue/test-utils";
 import EditablePost from "@/components/EditablePost.vue";
-import { localVue, store } from "../mockStore";
+import { localVue, store, posts } from "../mockStore";
 import sinon from "sinon";
 
 describe("EditablePost.vue", () => {
   let wrapper;
-  const post = {
-    id: "1",
-    title: "title",
-    message: "message"
-  };
+  const post = posts[0];
   let sandbox;
   let vm;
 
@@ -42,10 +38,7 @@ describe("EditablePost.vue", () => {
   });
 
   it("should trigger UPDATE_POST function", () => {
-    const updateSpy = sandbox.spy();
-    const emitSpy = sandbox.spy();
-    sandbox.stub(vm, "UPDATE_POST").callsFake(() => updateSpy());
-    sandbox.stub(vm, "$emit").callsFake(() => emitSpy());
+    const updateSpy = sandbox.spy(vm, "UPDATE_POST");
     const newPost = {
       title: "newTitle",
       message: "newMesage"
@@ -59,18 +52,18 @@ describe("EditablePost.vue", () => {
     message.element.value = newPost.message;
     message.trigger("input");
 
+    expect(wrapper.emitted().toggleEditable).toBeFalsy();
     const button = wrapper.find("button");
     button.trigger("submit");
 
-    expect(updateSpy.calledOnce).toEqual(true);
-    expect(emitSpy.calledOnce).toEqual(true);
+    expect(updateSpy.calledOnce).toBeTruthy();
+    expect(wrapper.emitted().toggleEditable).toBeTruthy();
     expect(vm.formObj.title).toEqual(newPost.title);
     expect(vm.formObj.message).toEqual(newPost.message);
   });
 
   it("should trigger ADD_POST function", () => {
-    const addSpy = sandbox.spy();
-    sandbox.stub(vm, "ADD_POST").callsFake(() => addSpy());
+    const addSpy = sandbox.spy(vm, "ADD_POST");
     const newPost = {
       title: "newTitle",
       message: "newMesage"
@@ -88,7 +81,7 @@ describe("EditablePost.vue", () => {
     const button = wrapper.find("button");
     button.trigger("submit");
 
-    expect(addSpy.calledOnce).toEqual(true);
+    expect(addSpy.calledOnce).toBeTruthy();
     expect(vm.formObj.title).toEqual("");
     expect(vm.formObj.message).toEqual("");
   });

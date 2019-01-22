@@ -44,7 +44,7 @@ export default {
         this.reset();
       } else {
         this.UPDATE_POST(this.formObj);
-        this.$emit("toggle-Editable");
+        this.$emit("toggleEditable");
       }
     }
   }
