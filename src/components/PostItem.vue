@@ -23,7 +23,8 @@ export default {
     post: Object
   },
   components: {
-    EditablePost: () => import("./EditablePost")
+    EditablePost: () =>
+      import(/* webpackChunkName: "EditablePost" */ "./EditablePost")
   },
   data: () => ({
     editable: false
