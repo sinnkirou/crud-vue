@@ -24,10 +24,6 @@ describe("EditablePost.vue", () => {
     sandbox.restore();
   });
 
-  afterEach(() => {
-    sandbox.restore();
-  });
-
   it("should render", () => {
     expect(wrapper.isVueInstance()).toBeTruthy();
     expect(vm.post).toEqual(post);
