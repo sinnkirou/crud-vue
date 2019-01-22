@@ -26,10 +26,15 @@ describe("mutations", () => {
   });
 
   it("UPDATE_POST", () => {
-    const state = { posts: [{ title: "title", message: "message", id: "1" }] };
+    const state = {
+      posts: [
+        { title: "title", message: "message", id: "1" },
+        { title: "title2", message: "message2", id: "2" }
+      ]
+    };
     const formObj = { title: "newtitle", message: "newmessage", id: "1" };
     mutations.UPDATE_POST(state, formObj);
-    expect(state.posts.length).toEqual(1);
+    expect(state.posts.length).toEqual(2);
     expect(state.posts[0].title).toEqual(formObj.title);
     expect(state.posts[0].message).toEqual(formObj.message);
   });

@@ -1,5 +1,6 @@
 import { createLocalVue } from "@vue/test-utils";
 import Vuex from "vuex";
+import VueRouter from "vue-router";
 import postModule from "../../src/store/modules/postModule";
 import _ from "lodash";
 
@@ -13,7 +14,7 @@ export const posts = [
 postModule.state.posts = _.clone(posts);
 
 export const localVue = createLocalVue();
-localVue.use(Vuex);
+localVue.use(Vuex, VueRouter);
 
 export const store = new Vuex.Store({
   modules: {

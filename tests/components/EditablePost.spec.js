@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import EditablePost from "@/components/EditablePost.vue";
-import { localVue, store, posts } from "../mockStore";
+import { localVue, store, posts } from "../mock";
 import sinon from "sinon";
 
 describe("EditablePost.vue", () => {

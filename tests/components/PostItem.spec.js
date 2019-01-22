@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import PostItem from "@/components/PostItem.vue";
-import { localVue, store, posts } from "../mockStore";
+import { localVue, store, posts } from "../mock";
 import sinon from "sinon";
 
 describe("PostItem.vue", () => {

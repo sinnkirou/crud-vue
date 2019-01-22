@@ -1,13 +1,12 @@
-import postService from "@/apis/postService";
+import postService, { _posts } from "@/apis/postService";
 
 describe("services testing", () => {
-  it("can call getPosts", () => {
-    let triggered = false;
-    const resolve = () => {
-      triggered = true;
+  it("can call getPosts", done => {
+    const resolve = data => {
+      expect(data).toEqual(_posts);
+      done();
     };
-    postService.getPosts(resolve).then(() => {
-      expect(triggered).to.equal(true);
-    });
+
+    postService.getPosts(resolve);
   });
 });

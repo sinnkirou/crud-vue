@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import AllPosts from "@/containers/AllPosts.vue";
-import { localVue, store, posts } from "../mockStore";
+import { localVue, store, posts } from "../mock";
 
 describe("AllPosts.vue", () => {
   let wrapper;

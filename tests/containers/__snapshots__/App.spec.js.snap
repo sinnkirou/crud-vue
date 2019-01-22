@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.vue has the expected html structure 1`] = `
+<div
+  id="app"
+>
+  <button
+    class="mdl-button mdl-js-button mdl-button--icon"
+    id="demo-menu-lower-left"
+    type="button"
+  >
+    <i
+      class="material-icons"
+    >
+      more_vert
+    </i>
+  </button>
+   
+  <ul
+    class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-left"
+  >
+    <li
+      class="mdl-menu__item"
+    >
+      <router-link-stub
+        to="/"
+      >
+        Home
+      </router-link-stub>
+    </li>
+     
+    <li
+      class="mdl-menu__item"
+    >
+      <router-link-stub
+        to="/posts"
+      >
+        Posts
+      </router-link-stub>
+    </li>
+  </ul>
+   
+  <router-view-stub />
+</div>
+`;
