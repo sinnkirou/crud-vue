@@ -5,6 +5,7 @@
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "serve": "serve -s dist",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --collectCoverage=true",
     "test:quick": "vue-cli-service test:unit"

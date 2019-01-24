@@ -16,7 +16,9 @@ const routes = [
 
 Vue.use(VueRouter);
 
-export default new VueRouter({
-  mode: "history",
-  routes
-});
+export function createRouter() {
+  return new VueRouter({
+    mode: "history",
+    routes
+  });
+}
